@@ -1,0 +1,12 @@
+www-data
+Kockopes01
+admin
+mysql -h database-main.cycq0z9urb9l.eu-west-2.rds.amazonaws.com -P 3307 -u admin -pKockopes01 -s -e SELECT * FROM users_requests.request_by_user WHERE request_string = '7NBLiMz11UTHJA==' AND user_id = '3' AND done = 'waiting' AND request_type = 'create' LIMIT 1;
+0
+67,3,id_rsa.pub,create,7NBLiMz11UTHJA==,gabouskovo,eu-west-2,t2.micro,ami-077a5b1762a2dde35,2019-08-26 14:21:03,,vps,waiting
+67,3,id_rsa.pub,create,7NBLiMz11UTHJA==,gabouskovo,eu-west-2,t2.micro,ami-077a5b1762a2dde35,2019-08-26 14:21:03,,vps,waiting
+aws ec2 run-instances --image-id ami-077a5b1762a2dde35 --count 1 --instance-type t2.micro --key-name id_rsa --security-group-ids user --user-data file:///home/ubuntu/download/hosting/build.sh --region eu-west-2 --tag-specifications 'ResourceType=instance,Tags=[{Key=Request,Value=67},{Key=Name,Value=client3}]'
+?$
+
+instance : 
+No instance data
